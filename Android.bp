@@ -751,6 +751,8 @@ filegroup {
 
 se_policy_binary {
     name: "sepolicy.recovery",
+    // PBRP needs only its shared recovery domain permissive on user builds.
+    permissive_domains_on_user_builds: ["recovery"],
     srcs: [
         ":recovery_sepolicy.cil",
         ":recovery_sepolicy_genfs_srcs",
